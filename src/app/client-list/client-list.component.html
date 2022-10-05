@@ -1,0 +1,58 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped; style">
+      <thead class="thead-dark">
+        <tr>
+          <th style="width: 15;" scope="col">First Name</th>
+          <th style="width: 15;" scope="col">Last Name</th>
+          <th style="width: 20;" scope="col">Email</th>
+          <th style="width: 20;" scope="col">Phone number</th>
+          <th style="width: 30;" scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients ">
+          <td>{{ client.firstName}}</td>
+          <td>{{ client.lastName}}</td>
+          <td>{{ client.email}}</td>
+          <td>{{ client.phoneNumber}}</td>
+          <td>
+            <div style="width:500px;" id="container">
+              <div style="margin-right: 5%; margin-left: 5%;"> <button type="button" class="btn btn-info"
+                  (click)="onViewPets(client.id)">View Pets</button></div>
+              <div style="margin-left: 5%;"><button type="button" class="btn btn-primary"
+                  (click)="onEdit(client)">Edit</button></div>
+              <div style=" margin-left: 5%;"><button type="button" class="btn btn-danger"
+                  (click)="deleteClient(client.id)">Delete</button></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary" (click)="addClient()">Add Client</button>
+
+    <div class="container" *ngIf="isAddClientFormVisible">
+      <h2>Client details</h2>
+      <form [formGroup]="myGroup">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="string" class="form-control" formControlName="formClientFirstName">
+        </div>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="string" class="form-control" formControlName="formClientLastName">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="formEmail">
+        </div>
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">Phone Number</label>
+          <input type="string" class="form-control" formControlName="formPhoneNumber">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="saveClient()">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

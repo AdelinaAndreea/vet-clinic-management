@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Client details</h2>
+
+  <form [formGroup]="myGroup">
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="string" class="form-control" formControlName="formClientFirstName">
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="string" class="form-control" formControlName="formClientLastName">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="formEmail">
+    </div>
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input type="string" class="form-control" formControlName="formPhoneNumber">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="updateClient()">Submit</button>
+  </form>
+  
+</div>

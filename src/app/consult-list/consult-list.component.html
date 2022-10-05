@@ -1,0 +1,21 @@
+<div class="style">
+
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Description</th>
+        <th scope="col">Pet Name</th>
+        <th scope="col">Price (RON)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let consult of consults ">
+        <td>{{ consult.date}}</td>
+        <td>{{ consult.description}}</td>
+        <td>{{ consult.pet?.name}}</td>
+        <td>{{ consult.price}}</td>
+      </tr>
+  </table>
+
+</div>

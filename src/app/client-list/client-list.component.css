@@ -1,0 +1,11 @@
+.style {
+    background-image: url("/assets/fundal1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#container div {
+    display: inline-block;
+    width: 130px;
+
+}

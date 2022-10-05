@@ -1,0 +1,54 @@
+<div class="container">
+    <h1>Pet details</h1>
+    <br>
+    <table class="table table-bordered tavel-striped table-hover; style">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Race</td>
+                <td>DateOfBirth</td>
+                <td>Kilos</td>
+                <td>isVaccinated</td>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{pet.id}}</td>
+                <td>{{pet.name}}</td>
+                <td>{{pet.race}}</td>
+                <td>{{pet.dateOfBirth}}</td>
+                <td>{{pet.kilos}}</td>
+                <td>{{pet.isVaccinated}}</td>
+                <td> <button type="button" class="btn btn-primary" (click)="onEdit(pet)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="isVisible">
+        <form [formGroup]="myGroup">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="string" class="form-control" formControlName="formPetName">
+            </div>
+            <div class="mb-3">
+                <label for="race" class="form-label">Race</label>
+                <input type="string" class="form-control" formControlName="formRace">
+            </div>
+            <div class="mb-3">
+                <label for="dateOfBirth" class="form-label">Date of birth</label>
+                <input type="date" class="form-control" formControlName="formDateOfBirth">
+            </div>
+            <div class="mb-3">
+                <label for="kilos" class="form-label">Kilos</label>
+                <input type="string" class="form-control" formControlName="formKilos">
+            </div>
+            <div class="mb-3">
+                <label for="isVaccinated" class="form-label">Vaccinated</label>
+                <input type="string" class="form-control" formControlName="formVaccinated">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="updatePet()">Submit</button>
+        </form>
+    </div>
+</div>

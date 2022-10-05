@@ -1,0 +1,80 @@
+<div class="container">
+
+  <table class="table table-bordered table-striped; style">
+    <thead class="thead-dark">
+      <tr>
+        <th style="width: 15%;" scope="col">Pet Name</th>
+        <th style="width: 25%;" scope="col">Owner</th>
+        <th style="width: 25%;" scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pets">
+        <td>{{ pet.name }}</td>
+        <td>{{pet.owner?.firstName}}</td>
+        <td>
+          <div style="width:500px;" id="container">
+            <div style="margin-right: 0.5%; margin-left: 5%;"> <button type="button" class="btn btn-info"
+                (click)="viewDetails(pet)">Details</button></div>
+            <div style="margin-right: 10%;"><button type="button" class="btn btn-primary"
+                (click)="showConsultForm(pet)">New Consult</button></div>
+            <div> <button type="button" class="btn btn-danger" (click)="deletePet(pet.id)">Delete</button></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="isAddButtonVisible">
+    <button type="button" class="btn btn-primary" (click)="showPetForm()">Add Pet</button>
+
+  </div>
+  <div *ngIf="isShowPetFormVisible">
+    <form [formGroup]="myGroup">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="string" class="form-control" formControlName="formPetName">
+      </div>
+      <div class="mb-3">
+        <label for="race" class="form-label">Race</label>
+        <input type="string" class="form-control" formControlName="formRace">
+      </div>
+      <div class="mb-3">
+        <label for="dateOfBirth" class="form-label">Date of birth</label>
+        <input type="date" class="form-control" formControlName="formDateOfBirth">
+      </div>
+      <div class="mb-3">
+        <label for="kilos" class="form-label">Kilos</label>
+        <input type="string" class="form-control" formControlName="formKilos">
+      </div>
+      <div class="mb-3">
+        <label for="isVaccinated" class="form-label">Vaccinated</label>
+        <input type="string" class="form-control" formControlName="formVaccinated">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="addPet()">Submit</button>
+    </form>
+  </div>
+
+</div>
+<div *ngIf="isNewConsultFormVisible">
+  <form [formGroup]="myGroup2">
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" class="form-control" formControlName="formDate">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="string" class="form-control" formControlName="formDescription">
+    </div>
+    <div class="mb-3">
+      <label for="petName" class="form-label">Pet Name</label>
+      <input type="string" class="form-control" formControlName="formPetName">
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" class="form-control" formControlName="formPrice">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="addConsult()">Submit</button>
+  </form>
+
+</div>

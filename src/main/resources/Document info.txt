@@ -1,0 +1,36 @@
+OBIECTIV: 
+
+Crearea si gestionarea unei aplicatii pentru un cabinet veterinar. 
+
+* Entitati: 
+	Client (ownerul animalului/user)
+		- id
+		- firstName
+		- lastName
+		- email
+		- telephone 
+		- <List> pet 
+	Pet
+		- id
+		- name
+		- race
+		- dateOfBirth 
+		- kilos
+		- is vaccinated 
+		- Client
+	Veterinar
+		- id 
+		- firstName
+		- lastName
+		- speciality
+		
+	Consult
+		- id 
+		- veterinarianId
+		- dateOfConsult
+		- pet id
+		- description 
+		- price
+		
+	 
+Userul sa se poata loga, sa vada istoricul vizitelor la cabinet, sa vada tratamentul aplicat animalului.

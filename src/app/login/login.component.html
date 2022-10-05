@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Login</h2>
+
+  <div *ngIf="hasError" class="alert alert-danger" role="alert">
+    Login failed
+  </div>
+
+  <form [formGroup]="myGroup">
+    <div class="mb-3">
+      <label for="userName" class="form-label">User Name</label>
+      <input type="string" class="form-control" formControlName="formUserName">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="string" class="form-control" formControlName="formPassword">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+.body {
+    background-image: imagePath;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.style {
+    background-image: url("/assets/1.jpg");
+    background-position: center;
+    background-size: cover;
+
+
+}
